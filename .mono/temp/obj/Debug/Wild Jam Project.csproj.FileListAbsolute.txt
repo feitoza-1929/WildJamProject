@@ -1,0 +1,9 @@
+E:\feitoza\Documents\Sources\game_development\godot\WildJamProject\.mono\temp\bin\Debug\Wild Jam Project.dll
+E:\feitoza\Documents\Sources\game_development\godot\WildJamProject\.mono\temp\bin\Debug\Wild Jam Project.pdb
+E:\feitoza\Documents\Sources\game_development\godot\WildJamProject\.mono\temp\obj\Debug\Wild Jam Project.csproj.AssemblyReference.cache
+E:\feitoza\Documents\Sources\game_development\godot\WildJamProject\.mono\temp\obj\Debug\Wild Jam Project.GeneratedMSBuildEditorConfig.editorconfig
+E:\feitoza\Documents\Sources\game_development\godot\WildJamProject\.mono\temp\obj\Debug\Wild Jam Project.AssemblyInfoInputs.cache
+E:\feitoza\Documents\Sources\game_development\godot\WildJamProject\.mono\temp\obj\Debug\Wild Jam Project.AssemblyInfo.cs
+E:\feitoza\Documents\Sources\game_development\godot\WildJamProject\.mono\temp\obj\Debug\Wild Jam Project.csproj.CoreCompileInputs.cache
+E:\feitoza\Documents\Sources\game_development\godot\WildJamProject\.mono\temp\obj\Debug\Wild Jam Project.dll
+E:\feitoza\Documents\Sources\game_development\godot\WildJamProject\.mono\temp\obj\Debug\Wild Jam Project.pdb
