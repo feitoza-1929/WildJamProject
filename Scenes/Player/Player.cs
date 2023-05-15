@@ -1,55 +1,59 @@
 using Godot;
 using System;
 
-public class Player : Area2D
+public class Player : KinematicBody2D
 {
-    [Signal] public delegate void PlayerIsIdle();
-    [Signal] public delegate void PlayerMovedUp();
-    [Signal] public delegate void PlayerMovedDown();
-    [Signal] public delegate void PlayerMovedRight();
-    [Signal] public delegate void PlayerMovedLeft();
+    
 
     private int speed = 250;
+    private AnimatedSprite _animatedPlayerSprite;
 
     public override void _Ready()
     {
-        
+        _animatedPlayerSprite = GetNode<AnimatedSprite>("AnimatedSprite");
     }
 
     public override void _Process(float delta)
     {
-        EmitMovementSignal();
+        ManagerAnimationMovement();
+    }
+
+    public override void _PhysicsProcess(float delta)
+    {
         Movement(delta);
     }
 
     private void Movement(float delta)
     {    
         Vector2 inputDirection = Input.GetVector("left", "right", "up", "down");
-        Vector2 velocity = inputDirection * speed;
-        Position += velocity * delta;
+        Vector2 velocity = inputDirection;
+
+        velocity = velocity.Normalized();
+        velocity = MoveAndSlide(velocity * speed);
     }
 
-    private void EmitMovementSignal()
+    private void ManagerAnimationMovement()
     {
         if (Input.IsActionPressed("up"))
         {
-            EmitSignal("PlayerMovedUp");
+            _animatedPlayerSprite.Play("walk_up");
         }
         else if (Input.IsActionPressed("down"))
         {
-            EmitSignal("PlayerMovedDown");
+            _animatedPlayerSprite.Play("walk_down");
         }
         else if (Input.IsActionPressed("right"))
         {
-            EmitSignal("PlayerMovedRight");
+            _animatedPlayerSprite.Play("walk_right");
         }
         else if (Input.IsActionPressed("left"))
         {
-            EmitSignal("PlayerMovedLeft");
+            _animatedPlayerSprite.Play("walk_left");
         }
         else
         {
-            EmitSignal("PlayerIsIdle");
+            _animatedPlayerSprite.Stop();
+            _animatedPlayerSprite.SetFrame(0);
         }
     }
 }
